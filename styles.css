@@ -1,0 +1,120 @@
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #233129;
+  background: #f5f7f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --green: #237b53;
+  --line: #e8ece5;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+botao, input, select { font: inherit; }
+button { cursor: pointer; }
+
+.barra-superior { height: 66px; padding: 0 max(20px,calc((100% - 1020px)/2)); display: flex; align-items: center; gap: 25px; background: #fff; border-bottom: 1px solid var(--line); }
+.marca { display: flex; align-items: center; gap: 9px; color: #25352a; text-decoration: none; font-size: 19px; font-weight: 800; letter-spacing: -1px; }
+.marca strong { color: var(--green); }
+.simbolo-marca { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 11px 11px 11px 4px; color: #fff; background: var(--green); font-size: 12px; }
+.nome-escolinha { margin-right: auto; color: #8a938b; font-size: 11px; }
+.link-superior { color: #347b53; text-decoration: none; font-size: 11px; font-weight: 600; }
+.link-superior:hover { text-decoration: underline; }
+.conteudo-pagina { width: min(100% - 36px, 820px); margin: 0 auto; padding: 39px 0 64px; }
+.cabecalho-pagina { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 23px; }
+.rotulo { margin: 0 0 7px; color: #89968b; font-size: 9px; font-weight: 700; letter-spacing: 1.1px; }
+h1,h2,h3,p { margin-top: 0; }
+h1 { margin-bottom: 6px; color: #1e2b22; font-size: 26px; letter-spacing: -.7px; }
+.subtitulo-pagina { margin: 0; color: #89928b; font-size: 11px; }
+.botao { min-height: 39px; padding: 0 15px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 1px solid transparent; border-radius: 8px; font-size: 11px; font-weight: 650; transition: .18s ease; }
+.botao-principal { color: #fff; background: var(--green); box-shadow: 0 3px 8px #237b5322; }
+.botao-principal:hover { background: #1b6845; }
+.botao-secundario { color: #59645b; background: #fff; border-color: #e6eae4; }
+
+.lista-jogos { display: grid; gap: 15px; }
+.cartao-jogo-aluno,.cartao-jogo-professor,.cartao-criar-jogo,.cartao-acesso,.cartao-vazio { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: 0 3px 12px #26392b06; }
+.cartao-jogo-aluno { padding: 19px 21px 0; }
+.linha-superior-jogo { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.linha-superior-jogo .rotulo { margin: 0; }
+.data-jogo { color: #8a938b; font-size: 9px; text-align: right; }
+.cartao-jogo-aluno h2 { margin: 12px 0 5px; font-size: 18px; letter-spacing: -.3px; }
+.detalhes-jogo { margin: 0; color: #7e8980; font-size: 10px; }
+.formulario-resposta-aluno { margin-top: 16px; padding-bottom: 16px; }
+.formulario-resposta-aluno label,.formulario-jogo label,.formulario-acesso label { display: grid; gap: 6px; color: #657067; font-size: 10px; font-weight: 600; }
+.formulario-resposta-aluno input,.formulario-jogo input,.formulario-acesso input { width: 100%; height: 38px; padding: 0 10px; border: 1px solid #e6eae4; border-radius: 7px; outline: 0; color: #354138; background: #fff; font-size: 11px; }
+.formulario-resposta-aluno input:focus,.formulario-jogo input:focus,.formulario-acesso input:focus { border-color: #5da477; box-shadow: 0 0 0 3px #4c9a6c1a; }
+.botoes-resposta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 9px; }
+.botao-sim { color: #fff; background: var(--green); }
+.botao-sim:hover { background: #1b6845; }
+.botao-nao { color: #a45b37; border-color: #f1e0d5; background: #fff8f3; }
+.botao-nao:hover { background: #fff0e6; }
+.retorno-resposta { min-height: 13px; margin: 8px 0 0; color: #2f7b50; font-size: 10px; font-weight: 600; }
+.lista-respostas { margin: 0; padding: 0; list-style: none; }
+.linha-resposta { min-height: 46px; padding: 7px 0; display: flex; align-items: center; gap: 9px; border-top: 1px solid #f0f2ed; }
+.cartao-jogo-aluno .linha-resposta { margin: 0 -21px; padding: 7px 21px; }
+.avatar-aluno { flex: 0 0 auto; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: #43664c; background: #e7f1e8; font-size: 10px; font-weight: 700; }
+.nome-aluno { color: #39443d; font-size: 10px; font-weight: 600; }
+.status-resposta { margin-left: auto; padding: 5px 8px; border-radius: 20px; font-size: 9px; font-weight: 650; }
+.status-sim { color: #33815a; background: #ebf5ed; }
+.status-nao { color: #c87949; background: #fff2e9; }
+.status-pendente { color: #888f87; background: #f1f3f0; }
+.sem-respostas { padding: 13px 0; border-top: 1px solid #f0f2ed; color: #929a93; text-align: center; font-size: 10px; }
+
+.cartao-acesso { max-width: 420px; margin: 15px auto; padding: 25px; }
+.icone-acesso { display: block; margin-bottom: 12px; font-size: 23px; }
+.cartao-acesso h2 { margin: 0 0 7px; font-size: 18px; }
+.descricao-acesso { margin: 0 0 17px; color: #828c84; font-size: 10px; line-height: 1.55; }
+.formulario-acesso { display: grid; gap: 9px; }
+.formulario-acesso .botao { margin-top: 3px; }
+.erro-formulario { min-height: 13px; margin: 0; color: #b64e3c; font-size: 10px; }
+.aviso-local { margin: 16px 0 0; padding-top: 12px; border-top: 1px solid #f0f2ed; color: #9a8b68; font-size: 9px; line-height: 1.5; }
+
+.cartao-criar-jogo { padding: 18px 20px; }
+.cabecalho-secao { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.cabecalho-secao .rotulo { margin-bottom: 4px; }
+.cabecalho-secao h2 { margin: 0; font-size: 15px; }
+.cabecalho-secao .botao { min-height: 33px; font-size: 9px; }
+.formulario-jogo { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 12px; }
+.formulario-jogo label:first-child,.formulario-jogo label:nth-last-of-type(1) { grid-column: 1 / -1; }
+.formulario-jogo .botao { justify-self: start; }
+.linha-formulario { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.secao-jogos-professor { margin-top: 24px; }
+.cartao-jogo-professor { padding: 17px 19px 0; }
+.cabecalho-jogo-professor { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.cabecalho-jogo-professor .rotulo { margin-bottom: 5px; }
+.cabecalho-jogo-professor h3 { margin: 0 0 4px; font-size: 15px; }
+.botao-excluir { padding: 6px 9px; border: 1px solid #f0ded7; border-radius: 7px; color: #a95d43; background: #fff; font-size: 9px; white-space: nowrap; }
+.botao-excluir:hover { background: #fff4ef; }
+.contagem-jogo { display: flex; gap: 8px; margin: 13px 0 11px; }
+.contagem-jogo span { padding: 5px 8px; border-radius: 6px; color: #6b776e; background: #f5f7f4; font-size: 9px; }
+.contagem-jogo strong { color: #347b53; }
+.cartao-jogo-professor .linha-resposta { margin: 0 -19px; padding: 7px 19px; }
+.seletor-status { margin-left: auto; padding: 5px 7px; border: 1px solid #e8ede7; border-radius: 6px; color: #4a6650; background: #f8fbf8; font-size: 9px; }
+.cartao-vazio { padding: 25px 20px; text-align: center; }
+.bola-vazia { display: block; margin-bottom: 10px; font-size: 26px; }
+.cartao-vazio h2 { margin: 0 0 6px; font-size: 15px; }
+.cartao-vazio p { margin: 0; color: #828c84; font-size: 10px; }
+.aviso-flutuante { position: fixed; z-index: 5; right: 20px; bottom: 20px; padding: 11px 15px; border-radius: 8px; color: #fff; background: #214f38; box-shadow: 0 8px 25px #18322330; font-size: 10px; opacity: 0; transform: translateY(9px); pointer-events: none; transition: .2s ease; }
+.aviso-flutuante.visivel { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 600px) {
+  .barra-superior { height: 58px; padding: 0 14px; gap: 12px; }
+  .marca { font-size: 17px; }
+  .nome-escolinha { display: none; }
+  .conteudo-pagina { width: calc(100% - 26px); padding-top: 27px; }
+  .cabecalho-pagina { margin-bottom: 17px; }
+  h1 { font-size: 22px; }
+  .subtitulo-pagina { font-size: 10px; line-height: 1.5; }
+  .cartao-jogo-aluno { padding: 16px 14px 0; }
+  .cartao-jogo-aluno .linha-resposta { margin: 0 -14px; padding-right: 14px; padding-left: 14px; }
+  .cartao-jogo-professor { padding-right: 14px; padding-left: 14px; }
+  .cartao-jogo-professor .linha-resposta { margin-right: -14px; margin-left: -14px; padding-right: 14px; padding-left: 14px; }
+  .cartao-criar-jogo { padding: 16px 14px; }
+  .formulario-jogo { grid-template-columns: 1fr; }
+  .formulario-jogo label:first-child,.formulario-jogo label:nth-last-of-type(1) { grid-column: auto; }
+  .linha-formulario { grid-column: auto; }
+  .cabecalho-secao { align-items: flex-start; }
+  .cabecalho-secao .botao { padding: 0 9px; }
+  .cartao-acesso { padding: 21px 17px; }
+}

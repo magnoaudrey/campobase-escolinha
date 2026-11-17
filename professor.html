@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f2">
+    <title>CampoBase — Área do professor</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-pagina="professor">
+    <header class="barra-superior">
+      <a class="marca" href="professor.html" aria-label="CampoBase área do professor"><span class="simbolo-marca">CB</span><span>campo<strong>base</strong></span></a>
+      <span class="nome-escolinha">Área do professor</span>
+      <a class="link-superior" href="index.html">Página do aluno</a>
+    </header>
+
+    <main class="conteudo-pagina">
+      <section class="cabecalho-pagina">
+        <div><p class="rotulo">ESCOLINHA DO CAMPO</p><h1>Jogos e respostas</h1><p class="subtitulo-pagina">Crie jogos e atualize a resposta de cada aluno.</p></div>
+      </section>
+
+      <section id="tela-configuracao" class="cartao-acesso" hidden>
+        <span class="icone-acesso">🔒</span><p class="rotulo">PRIMEIRO ACESSO</p><h2>Crie a senha do professor</h2>
+        <p class="descricao-acesso">Essa senha será usada para abrir a área do professor neste navegador.</p>
+        <form id="formulario-configuracao" class="formulario-acesso">
+          <label for="senha-configurar">Nova senha</label>
+          <input id="senha-configurar" type="password" minlength="8" autocomplete="new-password" placeholder="Use pelo menos 8 caracteres" required>
+          <label for="confirmar-senha">Confirme a senha</label>
+          <input id="confirmar-senha" type="password" minlength="8" autocomplete="new-password" required>
+          <p class="erro-formulario" id="erro-configuracao" aria-live="polite"></p>
+          <button class="botao botao-principal" type="submit">Criar senha e entrar</button>
+        </form>
+        <p class="aviso-local">Protótipo local: a senha protege a tela, mas não substitui autenticação em servidor.</p>
+      </section>
+
+      <section id="tela-entrada" class="cartao-acesso" hidden>
+        <span class="icone-acesso">🔒</span><p class="rotulo">ACESSO RESTRITO</p><h2>Área do professor</h2>
+        <p class="descricao-acesso">Digite sua senha para gerenciar os jogos.</p>
+        <form id="formulario-entrada" class="formulario-acesso">
+          <label for="senha-entrada">Senha</label>
+          <input id="senha-entrada" type="password" autocomplete="current-password" required>
+          <p class="erro-formulario" id="erro-entrada" aria-live="polite"></p>
+          <button class="botao botao-principal" type="submit">Entrar</button>
+        </form>
+        <p class="aviso-local">Senha esquecida? Os dados e a senha deste protótipo ficam salvos neste navegador.</p>
+      </section>
+
+      <section id="painel-professor" hidden>
+        <section class="cartao-criar-jogo">
+          <div class="cabecalho-secao"><div><p class="rotulo">AGENDA</p><h2>Adicionar jogo</h2></div><button id="botao-sair" class="botao botao-secundario" type="button">Sair</button></div>
+          <form id="formulario-jogo" class="formulario-jogo">
+            <label>Nome do jogo<input name="titulo" maxlength="70" placeholder="Ex.: Jogo de sábado" required></label>
+            <div class="linha-formulario">
+              <label>Data<input name="data" type="date" required></label>
+              <label>Horário<input name="horario" type="time" value="08:00" required></label>
+            </div>
+            <label>Local<input name="local" maxlength="100" placeholder="Ex.: Campo da escolinha" required></label>
+            <button class="botao botao-principal" type="submit">＋ Criar jogo</button>
+          </form>
+        </section>
+        <section class="secao-jogos-professor">
+          <div class="cabecalho-secao">
+            <div><p class="rotulo">PARTICIPAÇÃO</p><h2>Jogos cadastrados</h2></div>
+            <button id="copiar-link-aluno" class="botao botao-secundario" type="button">Copiar link do aluno</button>
+          </div>
+          <div id="jogos-professor" class="lista-jogos"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="aviso-flutuante" class="aviso-flutuante" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
